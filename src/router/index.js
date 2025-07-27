@@ -117,6 +117,30 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/client-management',
+    component: Layout,
+    redirect: '/client-management/index',
+    name: 'ClientManagement',
+    meta: {
+      title: '客户端管理',
+      icon: 'peoples',
+      roles: ['admin', 'operator'] // 需要管理员或操作员权限
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/client-management/index'),
+        name: 'ClientManagementIndex',
+        meta: {
+          title: '客户端管理',
+          icon: 'peoples',
+          noCache: false
+        }
+      }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/list',

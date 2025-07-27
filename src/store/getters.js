@@ -10,6 +10,11 @@ const getters = {
   introduction: state => state.user.introduction,
   roles: state => state.user.roles,
   permission_routes: state => state.permission.routes,
-  errorLogs: state => state.errorLog.logs
+  errorLogs: state => state.errorLog.logs,
+
+  // 客户端管理相关
+  clients: state => state.clientManagement.clients,
+  clientStatistics: state => state.clientManagement.statistics,
+  clientConnectionStatus: state => state.clientManagement.connectionStatus
 }
 export default getters
